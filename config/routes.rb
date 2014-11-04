@@ -16,7 +16,7 @@ get 'pictures' => 'pictures#index'
   #   resources :products
 
   # Example resource route with options:
-  #   resources :products do
+  #   sub-resources :products do
   #     member do
   #       get 'short'
   #       post 'toggle'
