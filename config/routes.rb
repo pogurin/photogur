@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   # get 'pictures/1' =>  'pictures#picture1'
   # get 'pictures/2' =>  'pictures#picture2'
 
+  post 'pictures' => 'pictures#create'
+  get 'pictures/new' => 'pictures#new'
+
   get 'pictures/:id' => 'pictures#show' , as: 'picture'
 
 
