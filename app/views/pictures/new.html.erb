@@ -2,21 +2,21 @@
 <%= link_to "Back to pictures" ,pictures_url %>
 
 <%= form_for @picture do |f| %>
- 
+
 
 <p>
-<%= f.label "artist" %><br>
-<%= f.text_field "artist" %>
+	<%= f.label "artist" %><br>
+	<%= f.text_field "artist" %>
 </p>
 <p>
-<%= f.label "title" %><br>
-<%= f.text_field "title" %>
+	<%= f.label "title" %><br>
+	<%= f.text_field "title" %>
 </p>
 <p>
-<%= f.label "url" %><br>
-<%= f.text_field "url" %>
+	<%= f.label "url" %><br>
+	<%= f.text_field "url" %>
 </p>
 <p>
-<%= f.submit "Save" %>
+	<%= f.submit "Save" %>
 </p>
 <% end %>
