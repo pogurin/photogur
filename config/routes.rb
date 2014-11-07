@@ -2,6 +2,16 @@ Rails.application.routes.draw do
   root 'pictures#index'
   resources :pictures
 
+
+#route(s), Model, migration, controller and view (index, new, create, show, edit, update, delete)
+# order  
+
+# rails console , pray for checking moddel
+
+
+
+
+
   # delete 'pictures/:id' => 'pictures#destroy' , as: "delete_picture"
   # root 'pictures#index'
   

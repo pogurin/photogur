@@ -1,8 +1,21 @@
 class PicturesController < ApplicationController
 	
 	def index
-		@pictures = Picture.all
+		@newest_first = Picture.newest_first
+		if params[:created_before]
+			mydate = Date.strptime(params[:created_before], "%Y-%m-%d")
+			@created_before = Picture.search_by_date(mydate)# We made a method by scope.
+		end #@created_beforeでobjyect保存
+		@most_recent_five = Picture.most_recent_five
+
+
+# one_single_picture = Picture.last
+# an_array_of_pictures = Picture.where(something)
+# @yoshis_pic = Picture.find(1)
+
+
 	end
+
 
 	def show 
 		@picture = Picture.find(params[:id])
@@ -43,11 +56,10 @@ class PicturesController < ApplicationController
 		end
 	end
 
-	private
+	
 	def picture_params
 		params.require(:picture).permit(:artist,:title,:url)
 	end
-
 
 end
 

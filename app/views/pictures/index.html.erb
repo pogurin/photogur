@@ -1,8 +1,38 @@
-<h1>Pictures (<%= @pictures.length %>)</h1>
-<%= link_to "New Picture","/pictures/new" %> 
+<h1>Pictures</h1>
+<%= link_to( "New Picture", new_picture_path, {class: "special"}) %> 
 
-<% @pictures.each do |picture| %>
-<p><%= picture.title %>, <%= picture.artist %></p>
-<%= link_to image_tag(picture.url), "/pictures/#{picture.id}" %>
-<% end %>
+<h1>Most recent 5 picturces</h1>
+
+<ul> 
+	<% @most_recent_five.each do |picture| %>
+	<li><%= picture.title %></li>
+	<%= link_to image_tag(picture.url), "/pictures/#{picture.id}" %>
+	<% end %>
+</ul>
+
+<h1>Newwest picture</h1>
+<ul>
+	<% @newest_first.each do |picture| %>
+	<li><%= picture.title %></li>
+	<%= link_to image_tag(picture.url), "/pictures/#{picture.id}" %>
+	<% end %>
+</ul>
+
+
+<h1>Created_before</h1>
+<%= link_to "Created before 2014 October","http://localhost:3000/?created_before=2014-11-08" %>
+<ul>
+
+<p>The number is <%= @created_before.count %></p>
+
+
+	<% unless @created_before.nil? %>
+	<% @created_before.each do |picture| %>
+	<li><% picture.title %></li>
+	<%= link_to image_tag(picture.url), "/pictures/#{picture.id}" %>
+	<% end %>
+	<% else %>
+	<p>Nothing</p>
+	<% end %>
+</ul>
 
