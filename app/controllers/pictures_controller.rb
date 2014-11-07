@@ -3,9 +3,11 @@ class PicturesController < ApplicationController
 	def index
 		@newest_first = Picture.newest_first
 		if params[:created_before]
+			#ここのparamereで、ブラウザの日程を保存。
 			mydate = Date.strptime(params[:created_before], "%Y-%m-%d")
 			@created_before = Picture.search_by_date(mydate)# We made a method by scope.
 		end #@created_beforeでobjyect保存
+			#@created_beforeは、viewに渡される。
 		@most_recent_five = Picture.most_recent_five
 
 

@@ -23,10 +23,10 @@
 <%= link_to "Created before 2014 October","http://localhost:3000/?created_before=2014-11-08" %>
 <ul>
 
-<p>The number is <%= @created_before.count %></p>
 
 
 	<% unless @created_before.nil? %>
+	<p>The number is <%= @created_before.count %></p>
 	<% @created_before.each do |picture| %>
 	<li><% picture.title %></li>
 	<%= link_to image_tag(picture.url), "/pictures/#{picture.id}" %>
